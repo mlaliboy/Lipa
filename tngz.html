@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tangazo la Ofa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .banner {
+            background-color: #fff;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .banner h1 {
+            color: #007bff;
+        }
+
+        .banner p {
+            color: #555;
+            font-size: 18px;
+        }
+
+        #claimBtn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #claimBtn:hover {
+            background-color: #0056b3;
+        }
+
+        #statusMessage {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #d9534f;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <h1>Ofa ya Leo!</h1>
+        <p>Sajili laini ya Lipa namba-Mpesa hapa, Watu watano watakaowahi watapata lipa namba ya M-pesa bure kabisa!</p>
+        <button id="claimBtn" onclick="claimOffer()">Gusa hapa kujisajili</button>
+        <p id="statusMessage"></p>
+    </div>
+    <script>
+        let claimsLeft = 5;
+
+        function claimOffer() {
+            if (claimsLeft > 0) {
+                claimsLeft--;
+
+                // WhatsApp URL without any message
+                const phoneNumber = '+255746364309'; // Replace with your WhatsApp number
+                const whatsappUrl = `https://wa.me/${phoneNumber}`;
+
+                // Redirect the user to WhatsApp
+                window.location.href = whatsappUrl;
+            } else {
+                const statusMessage = document.getElementById('statusMessage');
+                statusMessage.textContent = 'Pole, nafasi zote zimekwisha. Jaribu tena kesho!';
+                statusMessage.style.color = '#d9534f';
+            }
+        }
+    </script>
+</body>
+</html>
