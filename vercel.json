@@ -1,5 +1,14 @@
 {
   "rewrites": [
     {"source":"/(.*)","destination":"/tngz.html"}
+    {
+  "rewrites": [
+    { "source": "/https://lipa-59frkm7wy-mlaliboys-projects.vercel.app", "destination": "/https://lipa-Mpesa.vercel.app" }
+  ],
+  "redirects": [
+    { "source": "/https://lipa-Mpesa.vercel.app", "destination": "/https://lipa-Mpesa.vercel.app", "statusCode": 301 }
+  ]
+}
+
   ]
 }
