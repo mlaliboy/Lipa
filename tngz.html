@@ -7,25 +7,13 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* First part of the background (fixed) */
-        .fixed-bg {
-            background: url('images/pexels-ann-h-45017-1762851.jpg') no-repeat center center;
+            background: url('imagespexels-ann-h-45017-1762851.jpg') no-repeat center center fixed;
             background-size: cover;
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-
-        /* Second part of the background (scrolls with content) */
-        .scroll-bg {
-            background: url('images/pexels-ann-h-45017-1762851.jpg') no-repeat center center;
-            background-size: cover;
-            height: 100%;
+            height: 100vh;
+            margin: 0;
             padding: 10px;
         }
 
@@ -39,7 +27,6 @@
             max-width: 600px;
             width: 100%;
             overflow: hidden; /* Ensure the content doesn't overflow */
-            margin: 20px auto;
         }
 
         .banner h1 {
@@ -102,21 +89,12 @@
     </style>
 </head>
 <body>
-    <div class="fixed-bg">
-        <!-- Content for the fixed part of the background -->
-        <div class="banner">
-            <h1>Ofa ya Leo!</h1>
-            <p>Sajili laini ya Lipa namba-Mpesa hapa, Watu watano watakaowahi watapata lipa namba ya M-pesa bure kabisa!</p>
-            <button id="claimBtn" onclick="claimOffer()">Gusa hapa kujisajili</button>
-            <p id="statusMessage"></p>
-        </div>
+    <div class="banner">
+        <h1>Ofa ya Leo!</h1>
+        <p>Sajili laini ya Lipa namba-Mpesa hapa, Watu watano watakaowahi watapata lipa namba ya M-pesa bure kabisa!</p>
+        <button id="claimBtn" onclick="claimOffer()">Gusa hapa kujisajili</button>
+        <p id="statusMessage"></p>
     </div>
-
-    <div class="scroll-bg">
-        <!-- Content for the scrolling part of the background -->
-        <!-- Add your additional content here -->
-    </div>
-
     <script>
         let claimsLeft = 5;
 
