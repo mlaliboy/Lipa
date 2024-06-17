@@ -11,11 +11,17 @@
             padding: 0;
         }
 
+        .bg-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
         /* First part of the background (fixed) */
         .fixed-bg {
             background: url('imagespexels-ann-h-45017-1762851.jpg') no-repeat center center;
             background-size: cover;
-            height: 100vh;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -30,6 +36,10 @@
         }
 
         .banner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
             border: 2px solid #007bff;
             border-radius: 10px;
@@ -39,7 +49,6 @@
             max-width: 600px;
             width: 100%;
             overflow: hidden; /* Ensure the content doesn't overflow */
-            margin: 20px auto;
         }
 
         .banner h1 {
@@ -102,19 +111,21 @@
     </style>
 </head>
 <body>
-    <div class="fixed-bg">
-        <!-- Content for the fixed part of the background -->
-        <div class="banner">
-            <h1>Ofa ya Leo!</h1>
-            <p>Sajili laini ya Lipa namba-Mpesa hapa, Watu watano watakaowahi watapata lipa namba ya M-pesa bure kabisa!</p>
-            <button id="claimBtn" onclick="claimOffer()">Gusa hapa kujisajili</button>
-            <p id="statusMessage"></p>
+    <div class="bg-section">
+        <div class="fixed-bg">
+            <!-- Content for the fixed part of the background -->
+            <div class="banner">
+                <h1>Ofa ya Leo!</h1>
+                <p>Sajili laini ya Lipa namba-Mpesa hapa, Watu watano watakaowahi watapata lipa namba ya M-pesa bure kabisa!</p>
+                <button id="claimBtn" onclick="claimOffer()">Gusa hapa kujisajili</button>
+                <p id="statusMessage"></p>
+            </div>
         </div>
-    </div>
 
-    <div class="scroll-bg">
-        <!-- Content for the scrolling part of the background -->
-        <!-- Add your additional content here -->
+        <div class="scroll-bg">
+            <!-- Content for the scrolling part of the background -->
+            <!-- Add your additional content here -->
+        </div>
     </div>
 
     <script>
