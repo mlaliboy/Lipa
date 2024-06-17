@@ -1,14 +1,9 @@
 {
   "rewrites": [
-    {"source":"/(.*)","destination":"/tngz.html"}
-    {
-  "rewrites": [
-    { "source": "/https://lipa-59frkm7wy-mlaliboys-projects.vercel.app", "destination": "/https://lipa-Mpesa.vercel.app" }
+    { "source": "/(.*)", "destination": "/tngz.html" },
+    { "source": "/old-url", "destination": "/new-url" }
   ],
   "redirects": [
-    { "source": "/https://lipa-Mpesa.vercel.app", "destination": "/https://lipa-Mpesa.vercel.app", "statusCode": 301 }
-  ]
-}
-
+    { "source": "/old-url-2", "destination": "/new-url-2", "statusCode": 301 }
   ]
 }
