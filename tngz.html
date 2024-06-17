@@ -25,18 +25,20 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             max-width: 600px;
             width: 100%;
+            overflow: hidden; /* Ensure the content doesn't overflow */
         }
 
         .banner h1 {
             color: #007bff;
             font-size: 2em;
-            animation: color-change 2s infinite;
+            display: inline-block;
+            white-space: nowrap; /* Prevent text from wrapping */
+            animation: marquee 10s linear infinite;
         }
 
-        @keyframes color-change {
-            0% { color: #007bff; }
-            50% { color: #0056b3; }
-            100% { color: #007bff; }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
         }
 
         .banner p {
@@ -87,7 +89,7 @@
 </head>
 <body>
     <div class="banner">
-        <h1>Ofa ya Leo!</h1>
+        <h1>Ofa ya leo</h1>
         <p>Sajili laini ya Lipa namba-Mpesa hapa, Watu watano watakaowahi watapata lipa namba ya M-pesa bure kabisa!</p>
         <button id="claimBtn" onclick="claimOffer()">Gusa hapa kujisajili</button>
         <p id="statusMessage"></p>
