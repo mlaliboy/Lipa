@@ -13,6 +13,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            padding: 10px;
         }
 
         .banner {
@@ -22,15 +23,25 @@
             padding: 20px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
         }
 
         .banner h1 {
             color: #007bff;
+            font-size: 2em;
+            animation: color-change 2s infinite;
+        }
+
+        @keyframes color-change {
+            0% { color: #007bff; }
+            50% { color: #0056b3; }
+            100% { color: #007bff; }
         }
 
         .banner p {
             color: #555;
-            font-size: 18px;
+            font-size: 1.2em;
         }
 
         #claimBtn {
@@ -38,9 +49,10 @@
             color: white;
             border: none;
             padding: 10px 20px;
-            font-size: 16px;
+            font-size: 1em;
             cursor: pointer;
             border-radius: 5px;
+            margin-top: 20px;
         }
 
         #claimBtn:hover {
@@ -49,8 +61,27 @@
 
         #statusMessage {
             margin-top: 20px;
-            font-size: 16px;
+            font-size: 1em;
             color: #d9534f;
+        }
+
+        @media (max-width: 600px) {
+            .banner h1 {
+                font-size: 1.5em;
+            }
+
+            .banner p {
+                font-size: 1em;
+            }
+
+            #claimBtn {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+
+            #statusMessage {
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
@@ -65,6 +96,8 @@
         let claimsLeft = 5;
 
         function claimOffer() {
+            const statusMessage = document.getElementById('statusMessage');
+
             if (claimsLeft > 0) {
                 claimsLeft--;
 
@@ -72,10 +105,15 @@
                 const phoneNumber = '+255746364309'; // Replace with your WhatsApp number
                 const whatsappUrl = `https://wa.me/${phoneNumber}`;
 
+                // Show success message and remaining slots
+                statusMessage.textContent = `Hongera! Umesajili Lipa namba bure. Nafasi zilizobaki: ${claimsLeft}`;
+                statusMessage.style.color = '#28a745';
+
                 // Redirect the user to WhatsApp
-                window.location.href = whatsappUrl;
+                setTimeout(() => {
+                    window.location.href = whatsappUrl;
+                }, 2000); // Wait for 2 seconds before redirecting
             } else {
-                const statusMessage = document.getElementById('statusMessage');
                 statusMessage.textContent = 'Pole, nafasi zote zimekwisha. Jaribu tena kesho!';
                 statusMessage.style.color = '#d9534f';
             }
